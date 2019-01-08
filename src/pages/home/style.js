@@ -71,6 +71,15 @@ export const ListInfo = styled.div`
     color: #999;
   }
 `;
+export const LoadMore = styled.div`
+  line-height: 40px;
+  margin: 30px 0;
+  text-align: center;
+  background: #a5a5a5;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+`;
 // Recommend
 export const RecommendWrapper = styled.div`
   margin: 30px 0;
@@ -104,4 +113,16 @@ export const WriterItem = styled.dl`
     color: #999;
     font-size: 12px;
   }
+`;
+// ToTop
+export const BackTop = styled.div`
+  position: fixed;
+  right: 100px;
+  bottom: 100px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 12px;
+  text-align: center;
+  border: 1px solid #ccc;
 `;

@@ -1,1 +1,3 @@
 export const CHANGE_HOME_DATE = 'home/CHANGE_HOME_DATE';
+export const ADD_ARTICLE_LIST = 'home/ADD_ARTICLE_LIST';
+export const TOGGLE_SCROLL_THOW = 'home/TOGGLE_SCROLL_THOW';

@@ -3,6 +3,7 @@ import logoPic from '../../statics/logo.png';
 
 export const HeaderWrap = styled.div`
   position: relative;
+  z-index: 1;
   height: 56px;
   border-bottom: 1px solid #eee;
 `;

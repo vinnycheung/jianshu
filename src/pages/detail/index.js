@@ -1,22 +1,36 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
+import {connect} from 'react-redux';
+import {actionCreators} from './store';
 import {
   DetailWrapper,
   Header,
   Content
 } from './style';
 
-class Detail extends Component {
+class Detail extends PureComponent {
   render() {
+    const {title, content} = this.props;
     return (
       <DetailWrapper>
-        <Header>毁掉你们的不是抖音，而是你自己！</Header>
-        <Content>
-          <img src="https://upload-images.jianshu.io/upload_images/7994685-e928b1d3981c3e12.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/600/format/webp" alt=""/>
-          <p>旅游圈仿佛有一个隐藏的定律——</p>
-        </Content>
+        <Header>{title}</Header>
+        <Content dangerouslySetInnerHTML={{__html: content}} />
       </DetailWrapper>
     );
   }
+  componentDidMount() {
+    this.props.getDetail(this.props.match.params.id);
+  }
 }
 
-export default Detail
+const mapState = (state) => ({
+  title: state.getIn(['detail', 'title']),
+  content: state.getIn(['detail', 'content'])
+});
+
+const mapDispatch = (dispatch) => ({
+  getDetail(id) {
+    dispatch(actionCreators.getDetail(id));
+  }
+});
+
+export default connect(mapState, mapDispatch)(Detail)

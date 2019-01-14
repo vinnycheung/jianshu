@@ -18,6 +18,6 @@ export const Content = styled.div`
     max-width: 100%;
   }
   p {
-    
+    margin: 10px 0;
   }
 `;
